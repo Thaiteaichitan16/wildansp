@@ -19,8 +19,8 @@ Route::get('index', function () {
 Route::get('das', function () {
     return view('Admin.Dashboard');
 });
-Route::get('chart', function () {
-    return view('Admin.chart');
+Route::get('spp', function () {
+    return view('Admin.spp');
 });
 Route::get('empty', function () {
     return view('Admin.empty');
@@ -33,7 +33,7 @@ Route::get('ui', function () {
 });
 Route::get('table', function () {
     return view('Admin.table');
-});
+}); 
 Route::get('tabpanel', function () {
     return view('Admin.tab-panel');
 });

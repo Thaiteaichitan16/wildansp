@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html"><i class="fa fa-gear"></i> <strong>SMK BINA KERJA</strong></a>
+                <a class="navbar-brand" href="{{url('/das')}}"><i class="fa fa-gear"></i> <strong>SMKN 2 PWK</strong></a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -57,16 +57,16 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class="active-menu" href="{{url('/das')}}"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="ui-elements.html"><i class="fa fa-desktop"></i> UI Elements</a>
+                        <a href="{{url('/ui')}}"><i class="fa fa-desktop"></i> UI Elements</a>
                     </li>
 					<li>
-                        <a href="chart.html"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                        <a href="{{url('/spp')}}"><i class="fa fa-bar-chart-o"></i> Charts</a>
                     </li>
                     <li>
-                        <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
+                        <a href="{{url('/tabpanel')}}"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
                     </li>
                     
                     <li>
