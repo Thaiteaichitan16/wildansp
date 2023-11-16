@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,27 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('index', function () {
-    return view('Admin.index');
-});
-Route::get('das', function () {
-    return view('Admin.Dashboard');
-});
 Route::get('spp', function () {
     return view('Admin.spp');
 });
-Route::get('empty', function () {
-    return view('Admin.empty');
+Route::get('transaksi', function () {
+    return view('Admin.transaksi');
 });
-Route::get('form', function () {
-    return view('Admin.form');
+Route::get('petugas', function () {
+    return view('Admin.Petugas');
 });
-Route::get('ui', function () {
-    return view('Admin.ui-elements');
-});
-Route::get('table', function () {
+Route::get('tabel', function () {
     return view('Admin.table');
-}); 
-Route::get('tabpanel', function () {
-    return view('Admin.tab-panel');
+});
+Route::prefix('admin')->group(function(){
+    Route::get('/',[AdminController::class,'dash']);
+    Route::get('login',[AdminController::class,'loginA']);
+    Route::post('login',[AdminController::class,'ceklogin']);
+    Route::get('petugas',[AdminController::class,'datatabel']);
+    Route::get('tambahpetugas',[AdminController::class,'tambah']);
+    Route::get('validasi',[AdminController::class,'validsi']);
+    Route::get('status/{id}',[AdminController::class,'status']);
+    Route::get('logout',[AdminController::class,'logout']);
+    Route::get('tanggapan',[AdminController::class,'tanggapi']);
+    
 });
