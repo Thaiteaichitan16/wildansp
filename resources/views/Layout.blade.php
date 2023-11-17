@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DASH|ADMIN</title>
     <!-- Bootstrap Styles-->
-    <link href="assets/css/bootstrap.css" rel="stylesheet" />
+    <link href="/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
-    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    <link href="/assets/css/font-awesome.css" rel="stylesheet" />
     <!-- Morris Chart Styles-->
-    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
+    <link href="/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
     <!-- Custom Styles-->
-    <link href="assets/css/custom-styles.css" rel="stylesheet" />
+    <link href="/assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' /> 
-     
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+
 </head>
 
 <body>
@@ -28,7 +28,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{url('/admin')}}"><i class="fa fa-gear"></i> <strong>SMKN 2 PWK</strong></a>
+                <a class="navbar-brand" href="{{ url('/admin') }}"><i class="fa fa-gear"></i> <strong>SMKN 2
+                        PWK</strong></a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -56,13 +57,13 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="{{url('/admin')}}"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a class="active-menu" href="{{ url('/admin') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
                         <a href="#"><i class="fa fa-sitemap"></i> Data<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="{{url('/admin/petugas')}}">Petugas</a>
+                                <a href="{{ url('/admin/petugas') }}">Petugas</a>
                             </li>
                             <li>
                                 <a href="#">Siswa</a>
@@ -75,20 +76,20 @@
                     <li>
                         <a href="#"><i class="fa fa-desktop"></i> UI Elements</a>
                     </li>
-					<li>
-                        <a href="{{url('/spp')}}"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                    <li>
+                        <a href="{{ url('/spp') }}"><i class="fa fa-bar-chart-o"></i> Charts</a>
                     </li>
                     <li>
-                        <a href="{{url('/transaksi')}}"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
+                        <a href="{{ url('/transaksi') }}"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
                     </li>
-                    
+
                     <li>
                         <a href="table.html"><i class="fa fa-table"></i> Responsive Tables</a>
                     </li>
                     <li>
                         <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
                     </li>
- 
+
                     <li>
                         <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
                     </li>
@@ -97,7 +98,11 @@
             </div>
 
         </nav>
-        @yield('lyt')
+        <div id="page-wrapper">
+            <div id="page-inner">
+                @yield('lyt')
+            </div>
+        </div>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper">
             <div id="page-inner">
@@ -108,8 +113,8 @@
                         </h1> --}}
                     </div>
                 </div>
-	
-				</footer>
+
+                </footer>
             </div>
             <!-- /. PAGE INNER  -->
         </div>
@@ -121,22 +126,22 @@
     <script src="assets/js/jquery-1.10.2.js"></script>
     <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>
-	 
+
     <!-- Metis Menu Js -->
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- Morris Chart Js -->
     <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
     <script src="assets/js/morris/morris.js"></script>
-	
-	
-	<script src="assets/js/easypiechart.js"></script>
-	<script src="assets/js/easypiechart-data.js"></script>
-	
-	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
-	
+
+
+    <script src="assets/js/easypiechart.js"></script>
+    <script src="assets/js/easypiechart-data.js"></script>
+
+    <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+
     <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script>
- 
+
 
 </body>
 
