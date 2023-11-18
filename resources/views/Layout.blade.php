@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DASH|ADMIN</title>
+    <title>Dashboard</title>
     <!-- Bootstrap Styles-->
     <link href="/assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FontAwesome Styles-->
@@ -15,7 +16,7 @@
     <link href="/assets/css/custom-styles.css" rel="stylesheet" />
     <!-- Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-
+    <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
 </head>
 
 <body>
@@ -28,11 +29,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{{ url('/admin') }}"><i class="fa fa-gear"></i> <strong>SMKN 2
-                        PWK</strong></a>
+                <a class="navbar-brand" href="{{url('')}}"><strong>SPP BK</strong></a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                        <i class="fa fa-envelope fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    </a>
+                    
+                <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                         <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
@@ -53,68 +59,44 @@
         </nav>
         <!--/. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
+		<div id="sideNav" href=""></div>
             <div class="sidebar-collapse">
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a class="active-menu" href="{{ url('/admin') }}"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-sitemap"></i> Data<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{ url('/admin/petugas') }}">Petugas</a>
-                            </li>
-                            <li>
-                                <a href="#">Siswa</a>
-                            </li>
-                            <li>
-                                <a href="#">Kelas</a>
-                            </li>
-                        </ul>
+                        <a href="ui-elements.html"><i class="fa fa-desktop"></i> Data Petugas</a>
+                    </li>
+					<li>
+                        <a href="chart.html"><i class="fa fa-bar-chart-o"></i> Data Kelas</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-desktop"></i> UI Elements</a>
+                        <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Data Siswa</a>
+                    </li>
+                    
+                    <li>
+                        <a href="table.html"><i class="fa fa-table"></i> Data Spp</a>
                     </li>
                     <li>
-                        <a href="{{ url('/spp') }}"><i class="fa fa-bar-chart-o"></i> Charts</a>
+                        <a href="form.html"><i class="fa fa-edit"></i> Transaksi Pembayaran</a>
                     </li>
                     <li>
-                        <a href="{{ url('/transaksi') }}"><i class="fa fa-qrcode"></i> Tabs & Panels</a>
-                    </li>
-
-                    <li>
-                        <a href="table.html"><i class="fa fa-table"></i> Responsive Tables</a>
+                        <a href="#"><i class="fa fa-sitemap"></i>History Pembayaran</a>
                     </li>
                     <li>
-                        <a href="form.html"><i class="fa fa-edit"></i> Forms </a>
-                    </li>
-
-                    <li>
-                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Empty Page</a>
+                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Laporan</a>
                     </li>
                 </ul>
 
             </div>
 
         </nav>
-        <div id="page-wrapper">
-            <div id="page-inner">
-                @yield('lyt')
-            </div>
-        </div>
-        <!-- /. NAV SIDE  -->
-        <div id="page-wrapper">
-            <div id="page-inner">
-                <div class="row">
-                    <div class="col-md-12">
-                        {{-- <h1 class="page-header">
-                           <small>Selamat Dadang</small>
-                        </h1> --}}
-                    </div>
-                </div>
-
-                </footer>
+    @yield('lyt')
+			
+		
+				
             </div>
             <!-- /. PAGE INNER  -->
         </div>
@@ -126,22 +108,25 @@
     <script src="assets/js/jquery-1.10.2.js"></script>
     <!-- Bootstrap Js -->
     <script src="assets/js/bootstrap.min.js"></script>
-
+	 
     <!-- Metis Menu Js -->
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- Morris Chart Js -->
     <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
     <script src="assets/js/morris/morris.js"></script>
-
-
-    <script src="assets/js/easypiechart.js"></script>
-    <script src="assets/js/easypiechart-data.js"></script>
-
-    <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
-
+	
+	
+	<script src="assets/js/easypiechart.js"></script>
+	<script src="assets/js/easypiechart-data.js"></script>
+	
+	 <script src="assets/js/Lightweight-Chart/jquery.chart.js"></script>
+	
     <!-- Custom Js -->
     <script src="assets/js/custom-scripts.js"></script>
 
+      <script>
+    
+      </script>
 
 </body>
 

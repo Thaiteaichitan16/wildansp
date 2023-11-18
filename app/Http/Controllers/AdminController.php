@@ -33,15 +33,14 @@ class AdminController extends Controller
     //end logout
     // tambah petugas
     public function tambah(){
-        return view("Petugas.TambahPetugas");
+        return view("Admin.Tambahpetugas");
     }
     public function tambahin(Request $request){
         $c = new petugas();
         $cek = $request->validate([
-            'nama_petugas' => 'required|max:16',
             'username' => 'required|min:6',
             'password' => 'required|min:4',
-            'telp' => 'required|max:13',
+            'nama_petugas' => 'required|max:20',
             'level'=> 'required'
         ]);
         $c->create($request->all());
@@ -56,10 +55,37 @@ class AdminController extends Controller
         $cokot = new petugas();
         return view('Admin.Dashboard',['ya'=>$cokot->all()]);
     }
-
+    //end dashboard
+    //data petugas
     public function datatabel(){
         $ambil = new petugas();
         return view ('Admin.Datapetugas',['ya'=>$ambil->all()]);
     }
-
+    //end data petugas
+    //hapus data
+    public function hapus($id){
+        $petugas = new petugas();
+        $petugas = $petugas->find($id);
+        $petugas->delete();
+        return back();
+    }
+    //end hapus data
+    //update data
+    public function edit($id){
+        $petugas = new petugas();
+        return view('Editpetugas',['dapet'=>$petugas->find($id)]);
+    }
+    public function update(Request $request,$id){
+        $validasi = $request->validate([
+            'username' => 'required|min:6',
+            'password' => 'required|min:4',
+            'nama_petugas' => 'required|max:20',
+            'level'=> 'required'
+        ]);
+        
+        $petugas = new petugas();
+        $petugas = $petugas->find($id)->update($request->all());;
+       
+        return redirect('/admin/petugas');
+    }
 }    

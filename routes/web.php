@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('spp', function () {
-    return view('Admin.spp');
-});
+
 Route::get('transaksi', function () {
     return view('Admin.transaksi');
 });
@@ -31,8 +29,9 @@ Route::prefix('admin')->group(function(){
     Route::get('login',[AdminController::class,'loginA']);
     Route::post('login',[AdminController::class,'ceklogin']);
     Route::get('petugas',[AdminController::class,'datatabel']);
-    Route::get('tambahpetugas',[AdminController::class,'tambah']);
-    Route::get('validasi',[AdminController::class,'validsi']);
+    Route::get('nambah',[AdminController::class,'tambah']);
+    Route::post('nambah',[AdminController::class,'tambahin']);
+    Route::get('hapus/{id}',[AdminController::class,'hapus']);
     Route::get('status/{id}',[AdminController::class,'status']);
     Route::get('logout',[AdminController::class,'logout']);
     Route::get('tanggapan',[AdminController::class,'tanggapi']);
