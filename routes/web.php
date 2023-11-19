@@ -32,8 +32,10 @@ Route::prefix('admin')->group(function(){
     Route::get('nambah',[AdminController::class,'tambah']);
     Route::post('nambah',[AdminController::class,'tambahin']);
     Route::get('hapus/{id}',[AdminController::class,'hapus']);
+    Route::get('/edit/{id}',[AdminController::class,'edit']);
+    Route::post('/edit/{id}',[AdminController::class,'update']);
     Route::get('status/{id}',[AdminController::class,'status']);
     Route::get('logout',[AdminController::class,'logout']);
-    Route::get('tanggapan',[AdminController::class,'tanggapi']);
+   
     
 });

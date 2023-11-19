@@ -8,7 +8,7 @@
                       </h1>
 
       </div>
-          <form action="{{url('/admin/nambah')}}" method="post">
+          <form action="{{url('/admin/edit/')}}" method="post">
               @csrf
           <div id="page-inner"> 
             <div class="row">
@@ -29,7 +29,7 @@
                                   <form role="form">
                                       <div class="form-group">
                                           <label>Username</label>
-                                          <input type="text" class="form-control" name="username" placeholder="username">
+                                          <input type="text" class="form-control" name="username" placeholder="username" value="{{$editpet->username}}">
                                           @error('username')
                                           <div class="form-text">
                                               {{$message}}
@@ -38,7 +38,7 @@
                                       </div>
                                       <div class="form-group">
                                           <label>Password</label>
-                                          <input type="password" class="form-control" name="password" placeholder="password">
+                                          <input type="password" class="form-control" name="password" placeholder="password" value="{{$editpet->password}}">
                                           @error('password')
                                           <div class="form-text">
                                               {{$message}}
@@ -47,7 +47,7 @@
                                       </div>
                                       <div class="form-group">
                                           <label>Nama Petugas</label>
-                                          <input type="text" class="form-control" name="nama_petugas" placeholder="nama_petugas">
+                                          <input type="text" class="form-control" name="nama_petugas" placeholder="nama_petugas" value="{{$editpet->nama_petugas}}">
                                           @error('nama_petugas')
                                           <div class="form-text">
                                               {{$message}}
@@ -56,7 +56,7 @@
                                       </div>
                                       <div class="form-group">
                                           <label>Level</label>
-                                          <select class="form-control" name="level">
+                                          <select class="form-control" name="level" value="{{$editpet->level}}">
                                               <option>Admin</option>
                                               <option>Petugas</option>
                                           </select>

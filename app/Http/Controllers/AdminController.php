@@ -46,7 +46,7 @@ class AdminController extends Controller
         $c->create($request->all());
        
     
-        return back()->with('Pesan','Anda berhasil registrasi');
+        return back()->with('Pesan','Data Berhasil Ditambahkan');
     
     }
     //end tambahpetugas
@@ -56,7 +56,7 @@ class AdminController extends Controller
         return view('Admin.Dashboard',['ya'=>$cokot->all()]);
     }
     //end dashboard
-    //data petugas
+    //data tabel petugas
     public function datatabel(){
         $ambil = new petugas();
         return view ('Admin.Datapetugas',['ya'=>$ambil->all()]);
@@ -73,7 +73,7 @@ class AdminController extends Controller
     //update data
     public function edit($id){
         $petugas = new petugas();
-        return view('Editpetugas',['dapet'=>$petugas->find($id)]);
+        return view('Admin.Editpetugas',['editpet'=>$petugas->find($id)]);
     }
     public function update(Request $request,$id){
         $validasi = $request->validate([
@@ -86,6 +86,6 @@ class AdminController extends Controller
         $petugas = new petugas();
         $petugas = $petugas->find($id)->update($request->all());;
        
-        return redirect('/admin/petugas');
+        return redirect('/admin/petugas')->with('Pesan','Update Data Berhasil');;
     }
 }    

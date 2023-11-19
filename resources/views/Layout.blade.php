@@ -64,29 +64,29 @@
                 <ul class="nav" id="main-menu">
 
                     <li>
-                        <a href="index.html"><i class="fa fa-dashboard"></i> Dashboard</a>
+                        <a href="{{url('/admin')}}"><i class="fa fa-dashboard"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="ui-elements.html"><i class="fa fa-desktop"></i> Data Petugas</a>
+                        <a href="{{url('/admin/petugas')}}"><i class="fa fa-desktop"></i> Data Petugas</a>
                     </li>
 					<li>
-                        <a href="chart.html"><i class="fa fa-bar-chart-o"></i> Data Kelas</a>
+                        <a href="{{url('/admin/kelas')}}"><i class="fa fa-bar-chart-o"></i> Data Kelas</a>
                     </li>
                     <li>
-                        <a href="tab-panel.html"><i class="fa fa-qrcode"></i> Data Siswa</a>
+                        <a href="{{url('/admin/siswa')}}"><i class="fa fa-qrcode"></i> Data Siswa</a>
                     </li>
                     
                     <li>
-                        <a href="table.html"><i class="fa fa-table"></i> Data Spp</a>
+                        <a href="{{url('/admin/spp')}}"><i class="fa fa-table"></i> Data Spp</a>
                     </li>
                     <li>
-                        <a href="form.html"><i class="fa fa-edit"></i> Transaksi Pembayaran</a>
+                        <a href="{{url('/admin/transaksi')}}"><i class="fa fa-edit"></i> Transaksi Pembayaran</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-sitemap"></i>History Pembayaran</a>
+                        <a href="{{url('/admin/history')}}"><i class="fa fa-sitemap"></i>History Pembayaran</a>
                     </li>
                     <li>
-                        <a href="empty.html"><i class="fa fa-fw fa-file"></i> Laporan</a>
+                        <a href="{{url('/admin/laporan')}}"><i class="fa fa-fw fa-file"></i> Laporan</a>
                     </li>
                 </ul>
 

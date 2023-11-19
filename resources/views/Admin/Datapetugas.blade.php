@@ -37,7 +37,7 @@
                             <td>{{$data->nama_petugas}}</td>
                             <td>{{$data->level}}</td>
                             <td class="center">
-                                <a href="{{url('edit/'.$data->id_petugas)}}" class="btn btn-primary"><i class="fa fa-edit "></i> Edit</a>
+                                <a href="{{url('/admin/edit/'.$data->id_petugas)}}" class="btn btn-primary"><i class="fa fa-edit "></i> Edit</a>
                                 <a href="hapus/{{$data->id_petugas}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>
                                 </td>
                         </tr>
