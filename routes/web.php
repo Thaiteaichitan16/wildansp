@@ -18,9 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('transaksi', function () {
     return view('Admin.transaksi');
 });
-Route::get('petugas', function () {
-    return view('Admin.Petugas');
-});
 Route::get('tabel', function () {
     return view('Admin.table');
 });
