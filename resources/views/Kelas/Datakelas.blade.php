@@ -3,7 +3,7 @@
 <div id="page-wrapper">
     <div class="header"> 
                   <h1 class="page-header">
-                     Data Petugas
+                      Data Kelas
                   </h1>
     {{-- table--}}
     <div id="page-inner"> 
@@ -13,38 +13,34 @@
                 <!-- Advanced Tables -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                         Tabel Data Petugas
+                         Tabel Data Kelas
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
                         <tr>
-                            <th>ID Petugas</th>
-                            <th>Username</th>
-                            <th>Password</th>
-                            <th>Nama Petugas</th>
-                            <th>Level</th>
+                            <th>ID Kelas</th>
+                            <th>Nama Kelas</th>
+                            <th>Kompetensi Keahlian</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($ya as $data)
+                        @foreach ($yu as $data)
                         <tr class="odd gradeX">
-                            <td>{{$data->id_petugas}}</td>
-                            <td>{{$data->username}}</td>
-                            <td>{{$data->password}}</td>
-                            <td>{{$data->nama_petugas}}</td>
-                            <td>{{$data->level}}</td>
+                            <td>{{$data->id_kelas}}</td>
+                            <td>{{$data->nama_kelas}}</td>
+                            <td>{{$data->kompetensi_keahlian}}</td>
                             <td class="center">
-                                <a href="{{url('/admin/edit/'.$data->id_petugas)}}" class="btn btn-primary"><i class="fa fa-edit "></i> Edit</a>
-                                <a href="hapus/{{$data->id_petugas}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>
+                                <a href="{{url('/admin/kedit/'.$data->id_kelas)}}" class="btn btn-primary"><i class="fa fa-edit "></i> Edit</a>
+                                <a href="khapus/{{$data->id_kelas}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>
                                 </td>
                         </tr>
                         @endforeach
                     </tbody>
                    </table>
-                   <a class="btn btn-primary" href="{{url('admin/nambah')}}" role="button">Tambah</a>
+                   <a class="btn btn-primary" href="{{url('admin/knambah')}}" role="button">Tambah</a>
                 </div>
             </div>
            
