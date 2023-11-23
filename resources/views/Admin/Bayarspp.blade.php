@@ -40,15 +40,19 @@
                                             </div>
                                         @enderror
                                     </div>
-                                      <div class="form-group">
-                                          <label>NISN</label>
-                                          <input type="text" class="form-control" name="nisn" placeholder="nisn">
-                                          @error('nisn')
-                                          <div class="form-text">
-                                              {{$message}}
-                                          </div>
-                                          @enderror
-                                      </div>
+                                    <div class="form-group">
+                                        <label>Nama Siswa</label>
+                                        <select class="form-control" name="nisn">
+                                            @foreach ($datasiswa as $item)
+                                                <option value="{{ $item->nisn }}">{{$item->nama}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('nisn')
+                                            <div class="form-text">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
                                       <div class="form-group">
                                           <label>Tanggal Bayar</label>
                                           <input type="date" class="form-control" name="tgl_bayar" placeholder="Tanggal Bayar">

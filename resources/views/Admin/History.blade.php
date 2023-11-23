@@ -20,35 +20,31 @@
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
                         <tr>
-                            <th>NISN</th>
-                            <th>NIS</th>
-                            <th>Nama</th>
-                            <th>Kelas</th>
-                            <th>Alamat</th>
-                            <th>No Telp</th>
+                            <th>ID Pembayaran</th>
+                            <th>Nama Petugas</th>
+                            <th>Nama Siswa</th>
+                            <th>Tanggal Bayar</th>
+                            <th>Bulan dibayar</th>
+                            <th>Tahun dibayar</th>
                             <th>Tahun/Nominal</th>
-                            <th>Aksi</th>
+                            <th>Jumlah dibayar</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($yi as $data)
+                        @foreach ($ye as $data)
                         <tr class="odd gradeX">
-                            <td>{{$data->nisn}}</td>
-                            <td>{{$data->nis}}</td>
-                            <td>{{$data->nama}}</td>
-                            <td>{{$data->kelas->nama_kelas}}-{{$data->kelas->kompetensi_keahlian}}</td>
-                            <td>{{$data->alamat}}</td>
-                            <td>{{$data->no_telp}}</td>
+                            <td>{{$data->id_pembayaran}}</td>
+                            <td>{{$data->petugas->nama_petugas}}</td>
+                            <td>{{$data->siswa->nama}}</td>
+                            <td>{{$data->tgl_bayar}}</td>
+                            <td>{{$data->bulan_dibayar}}</td>
+                            <td>{{$data->tahun_dibayar}}</td>
                             <td>{{$data->spp->tahun}}-{{$data->spp->nominal}}</td>
-                            <td class="center">
-                                <a href="{{url('/admin/sedit/'.$data->nisn)}}" class="btn btn-primary"><i class="fa fa-edit "></i> Edit</a>
-                                <a href="shapus/{{$data->nisn}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>
-                                </td>
+                            <td>{{$data->jumlah_dibayar}}</td>
                         </tr>
                         @endforeach
                     </tbody>
                    </table>
-                   <a class="btn btn-primary" href="{{url('admin/snambah')}}" role="button">Tambah</a>
                 </div>
             </div>
            

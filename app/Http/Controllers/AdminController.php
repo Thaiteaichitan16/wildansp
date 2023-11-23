@@ -266,14 +266,15 @@ class AdminController extends Controller
     //data tabel pemabayarn
     public function datatabel5(){
         $ambil = new pembayaran();
-        return view ('Admin.History',['yo'=>$ambil->all()]);
+        return view ('Admin.History',['ye'=>$ambil->all()]);
     }
     //end data petugas
     //tambah data siswa
     public function bayar(){
+        $oke = new siswa();
         $cokot = new petugas();
         $ambil = new spp();
-        return view("Admin.Bayarspp",['datapet'=>$cokot->all(),'datasp'=>$ambil->all()]);
+        return view("Admin.Bayarspp",['datapet'=>$cokot->all(),'datasp'=>$ambil->all(),'datasiswa'=>$oke->all()]);
     }
     public function bayarin(Request $request){
         $c = new pembayaran();
