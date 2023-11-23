@@ -80,10 +80,10 @@
                         <a href="{{url('/admin/spp')}}"><i class="fa fa-table"></i> Data Spp</a>
                     </li>
                     <li>
-                        <a href="{{url('/admin/transaksi')}}"><i class="fa fa-edit"></i> Transaksi Pembayaran</a>
+                        <a href="{{url('/admin/bayar')}}"><i class="fa fa-edit"></i> Transaksi Pembayaran</a>
                     </li>
                     <li>
-                        <a href="{{url('/admin/history')}}"><i class="fa fa-sitemap"></i>History Pembayaran</a>
+                        <a href="{{url('/admin/pembayaran')}}"><i class="fa fa-sitemap"></i>History Pembayaran</a>
                     </li>
                     <li>
                         <a href="{{url('/admin/laporan')}}"><i class="fa fa-fw fa-file"></i> Laporan</a>

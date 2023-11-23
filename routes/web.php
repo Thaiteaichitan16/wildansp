@@ -58,6 +58,11 @@ Route::prefix('admin')->group(function(){
     Route::get('/spedit/{id}',[AdminController::class,'editspp']);
     Route::post('/spedit/{id}',[AdminController::class,'updatespp']);
 
+    //Pembayaran
+    Route::get('bayar',[AdminController::class,'bayar']);
+    Route::post('bayar',[AdminController::class,'bayarin']);
+    Route::get('pembayaran',[AdminController::class,'datatabel5']);
+
     Route::get('status/{id}',[AdminController::class,'status']);
     Route::get('logout',[AdminController::class,'logout']);
    

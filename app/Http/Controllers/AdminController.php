@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\kelas;
+use App\Models\pembayaran;
 use App\Models\petugas;
 use App\Models\siswa;
 use App\Models\spp;
@@ -262,5 +263,33 @@ class AdminController extends Controller
     }
     //end hapus data
 
-
+    //data tabel pemabayarn
+    public function datatabel5(){
+        $ambil = new pembayaran();
+        return view ('Admin.History',['yo'=>$ambil->all()]);
+    }
+    //end data petugas
+    //tambah data siswa
+    public function bayar(){
+        $cokot = new petugas();
+        $ambil = new spp();
+        return view("Admin.Bayarspp",['datapet'=>$cokot->all(),'datasp'=>$ambil->all()]);
+    }
+    public function bayarin(Request $request){
+        $c = new pembayaran();
+        $cek = $request->validate([
+            'id_petugas' => 'required',
+            'nisn' => 'required',
+            'tgl_bayar' => 'required',
+            'bulan_bayar' => 'required',
+            'tahun_bayar' => 'required',
+            'id_spp' => 'required',
+            'jumlah_bayar' => 'required'
+        ]);
+        $c->create($request->all());
+       
+    
+        return redirect('/admin/pembayaran')->with('Pesan','Data Berhasil Ditambahkan');
+    
+    }
 }    
