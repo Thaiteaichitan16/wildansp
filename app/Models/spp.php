@@ -23,4 +23,8 @@ class spp extends Model
 
     //string kolom yang dapat diisi secara masal
     protected $guarded = [];
+
+    public function siswa(){
+        return $this->hasMany(siswa::class, 'id_spp','id_spp');
+    }
 }

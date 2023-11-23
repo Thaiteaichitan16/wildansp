@@ -156,7 +156,10 @@ class AdminController extends Controller
     //end data siswa
     //tambah data siswa
     public function tambahsis(){
-        return view("Siswa.Tambahsiswa");
+
+        $nyuri = new kelas();
+        $kaka = new spp();
+        return view("Siswa.Tambahsiswa",['datakelas'=>$nyuri->all(),'dataspp'=>$kaka->all()]);
     }
     public function tambahsiswa(Request $request){
         $c = new siswa();
@@ -179,7 +182,9 @@ class AdminController extends Controller
     //update data kelas
     public function editsiswa($nisn){
         $siswa = new siswa();
-        return view('Siswa.Editsiswa',['editsis'=>$siswa->find($nisn)]);
+        $nyuri = new kelas();
+        $kaka = new spp();
+        return view('Siswa.Editsiswa',['editsis'=>$siswa->find($nisn),'datakelas'=>$nyuri->all(),'dataspp'=>$kaka->all()]);
     }
     public function updatesiswa(Request $request,$nisn){
         $validasi = $request->validate([

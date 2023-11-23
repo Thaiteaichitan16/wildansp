@@ -55,14 +55,18 @@
                                           @enderror
                                       </div>
                                       <div class="form-group">
-                                          <label>ID Kelas</label>
-                                          <input type="number" class="form-control" name="id_kelas" placeholder="id kelas">
-                                          @error('id_kelas')
-                                          <div class="form-text">
-                                              {{$message}}
-                                          </div>
-                                          @enderror
-                                      </div>
+                                        <label>ID Kelas</label>
+                                        <select class="form-control" name="id_kelas">
+                                            @foreach ($datakelas as $item)
+                                                <option value="{{ $item->id_kelas }}">{{$item->nama_kelas}}-{{$item->kompetensi_keahlian}}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('id_kelas')
+                                            <div class="form-text">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                                    </div>
                                       <div class="form-group">
                                           <label>Alamat</label>
                                           <input type="text" class="form-control" name="alamat" placeholder="alamat">
@@ -82,14 +86,18 @@
                                           @enderror
                                       </div>
                                       <div class="form-group">
-                                          <label>ID Spp</label>
-                                          <input type="number" class="form-control" name="id_spp" placeholder="id spp">
-                                          @error('id_spp')
-                                          <div class="form-text">
-                                              {{$message}}
-                                          </div>
-                                          @enderror
-                                      </div>
+                                                    <label>ID Spp</label>
+                                                    <select class="form-control" name="id_spp">
+                                                        @foreach ($dataspp as $item)
+                                                            <option value="{{ $item->id_spp }}">{{$item->tahun}}-{{$item->nominal}}</option>
+                                                        @endforeach
+                                                    </select>
+                                                    @error('id_spp')
+                                                        <div class="form-text">
+                                                            {{ $message }}
+                                                        </div>
+                                                    @enderror
+                                                </div>
                                       <button class="btn btn-default">Tambah</button>
                                       <button class="btn btn-default" type="reset" ><a href="{{url('/admin/siswa')}}">Batal</a></button>
                                   </form>

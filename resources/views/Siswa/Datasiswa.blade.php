@@ -23,10 +23,10 @@
                             <th>NISN</th>
                             <th>NIS</th>
                             <th>Nama</th>
-                            <th>ID Kelas</th>
+                            <th>Kelas</th>
                             <th>Alamat</th>
                             <th>No Telp</th>
-                            <th>ID SPP</th>
+                            <th>Tahun/Nominal</th>
                             <th>Aksi</th>
                         </tr>
                     </thead>
@@ -36,10 +36,10 @@
                             <td>{{$data->nisn}}</td>
                             <td>{{$data->nis}}</td>
                             <td>{{$data->nama}}</td>
-                            <td>{{$data->id_kelas}}</td>
+                            <td>{{$data->kelas->nama_kelas}}-{{$data->kelas->kompetensi_keahlian}}</td>
                             <td>{{$data->alamat}}</td>
                             <td>{{$data->no_telp}}</td>
-                            <td>{{$data->id_spp}}</td>
+                            <td>{{$data->spp->tahun}}-{{$data->spp->nominal}}</td>
                             <td class="center">
                                 <a href="{{url('/admin/sedit/'.$data->nisn)}}" class="btn btn-primary"><i class="fa fa-edit "></i> Edit</a>
                                 <a href="shapus/{{$data->nisn}}" class="btn btn-danger"><i class="fa fa-pencil"></i> Delete</a>

@@ -23,7 +23,7 @@ Route::get('tabel', function () {
 });
 Route::prefix('admin')->group(function(){
     Route::get('/',[AdminController::class,'dash']);
-    Route::get('login',[AdminController::class,'loginA']);
+    Route::get('login',[AdminController::class,'login']);
     Route::post('login',[AdminController::class,'ceklogin']);
 
     // petugas
