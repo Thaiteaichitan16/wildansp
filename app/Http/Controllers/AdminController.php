@@ -243,15 +243,10 @@ class AdminController extends Controller
         return view('Spp.Editspp',['editspp'=>$spp->find($id)]);
     }
     public function updatespp(Request $request,$id){
-        $validasi = $request->validate([
-            'tahun' => 'required',
-            'nominal' => 'required'
-        ]);
-        
         $spp = new spp();
-        $spp = $spp->find($id)->update($request->all());;
+        $spp = $spp->find($id)->update($request->all());
        
-        return redirect('/admin/spp')->with('Pesan','Update Data Berhasil');;
+        return redirect('/admin/spp')->with('Pesan','Update Data Berhasil');
     }
     //end update data
     //hapus data kelas
@@ -268,8 +263,8 @@ class AdminController extends Controller
         $ambil = new pembayaran();
         return view ('Admin.History',['ye'=>$ambil->all()]);
     }
-    //end data petugas
-    //tambah data siswa
+    //end history pembayaran
+    //data pembayaran
     public function bayar(){
         $oke = new siswa();
         $cokot = new petugas();
@@ -277,7 +272,7 @@ class AdminController extends Controller
         return view("Admin.Bayarspp",['datapet'=>$cokot->all(),'datasp'=>$ambil->all(),'datasiswa'=>$oke->all()]);
     }
     public function bayarin(Request $request){
-        $c = new pembayaran();
+        
         $cek = $request->validate([
             'id_petugas' => 'required',
             'nisn' => 'required',
@@ -287,10 +282,19 @@ class AdminController extends Controller
             'id_spp' => 'required',
             'jumlah_bayar' => 'required'
         ]);
-        $c->create($request->all());
+        $c = new pembayaran();
+        $c->create([
+            'id_petugas' =>session('datapetugas')->id_petugas,
+            'nisn' =>$request->nisn,
+            'tgl_bayar' =>$request->tgl_bayar,
+            'bulan_bayar' =>$request->bulan_bayar,
+            'tahun_bayar' =>$request->tahun_bayar,
+            'id_spp' =>$request->id_spp,
+            'jumlah_bayar' =>$request->jumlah_bayar
+        ]);
        
     
-        return redirect('/admin/pembayaran')->with('Pesan','Data Berhasil Ditambahkan');
+        return redirect('/admin/pembayaran')->with('Pesan','Pembayaran berhasil');
     
     }
 }    

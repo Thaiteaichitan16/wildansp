@@ -28,23 +28,10 @@
                               <div class="col-lg-12">
                                   <form role="form">
                                     <div class="form-group">
-                                        <label>ID Petugas</label>
-                                        <select class="form-control" name="id_petugas">
-                                            @foreach ($datapet as $item)
-                                                <option value="{{ $item->id_petugas }}">{{$item->nama_petugas}}</option>
-                                            @endforeach
-                                        </select>
-                                        @error('id_petugas')
-                                            <div class="form-text">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
-                                    </div>
-                                    <div class="form-group">
                                         <label>Nama Siswa</label>
                                         <select class="form-control" name="nisn">
                                             @foreach ($datasiswa as $item)
-                                                <option value="{{ $item->nisn }}">{{$item->nama}}</option>
+                                                <option value="{{ $item->nisn }}">{{$item->nisn}}-{{$item->nama}}</option>
                                             @endforeach
                                         </select>
                                         @error('nisn')

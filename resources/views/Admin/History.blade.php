@@ -3,7 +3,7 @@
 <div id="page-wrapper">
     <div class="header"> 
                   <h1 class="page-header">
-                      Data Siswa
+                      History
                   </h1>
     {{-- table--}}
     <div id="page-inner"> 
@@ -13,7 +13,7 @@
                 <!-- Advanced Tables -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                         Tabel Data Siswa
+                         History Pembayaran
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
