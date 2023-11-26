@@ -4,77 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-     <!-- Bootstrap Styles-->
-     <link href="/assets/css/bootstrap.css" rel="stylesheet" />
-     <!-- FontAwesome Styles-->
-     <link href="/assets/css/font-awesome.css" rel="stylesheet" />
-     <!-- Morris Chart Styles-->
-     <link href="/assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
-     <!-- Custom Styles-->
-     <link href="/assets/css/custom-styles.css" rel="stylesheet" />
-     <!-- Google Fonts-->
-     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
-     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css"> 
-    <title>Document</title>
+    <title>Login | Admin</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <style>
-        body{
-            width: 50%;
-            margin: 50vh;
-
+        * {
+            font-family: 'poppins', sans serif;
         }
-        h1{
-            text-align: center;
-            padding: 40px 10px;
+
+        body {
+            background: linear-gradient(120deg, #a5dee5,#ffffff);
+            background-size: cover;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 90vh;
+        }
+
+        .bok1 {
+            width: 350px;
+            display: flex;
+            flex-direction: column;
+            padding: 0 15px 0 15px;
+        }
+
+        header {
+            color: black;
+            font-size: 30px;
+            display: flex;
+            justify-content: center;
+            padding: 10px 0 10px 0;
+        }
+
+        .input-field {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 10px 0 10px 0;
+        }
+        .input-button {
+            display: flexbox;
+            justify-content: left , right;
+            padding: 0 15px 0 15px; 
+            
+        }
+
+        .input {
+            
+            height: 45px;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-radius: 10px;
+            color: black;
+            margin-top: 7px;
+            padding: 0 0 0 50px;
+            background: rgba(255, 255, 255, 0.189);
+        }
+
+        ::-webkit-input-placeholder {
+            color: black;
+        }
+
+        .sumbit {
+            border: none;
+            border-radius: 30px;
+            font-size: 15px;
+            height: 45px;
+            outline: none;
+            width: 100px;
+            background: (255, 255, 255, 0, 7);
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .submit:hover {
+            box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+        }
+        .button {
+            border-radius: 5px;
+            font-size: 15px;
+            height: 25px;
+            width: 100px;
+            background: (255, 255, 255, 0, 7);
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        .button:hover {
+            box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+        }
+
+        .bottom {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: small;
+            color: #a5dee5;
+            margin-top: 10px;
+        }
+
+
+        label a {
+            color: black;
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
-    <div class="card text-center">
-        <div class="card-header">
-         <h1>LOGIN</h1>
-        </div>
-        <div class="card-body">
-            <form>
-                <!-- Email input -->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example1">Username</label>
-                  <input type="email" id="form2Example1" class="form-control" />
-                  
+    <div class="box">
+        <div class="box1">
+            <div class="top-header">
+                <form action="" method="post">
+                    @csrf
+                    <header>Login</header>
+            </div>
+
+            <div class="input-field">
+                <input type="text" class="input" placeholder="Username" name="username" required>
+
+                <div class="input-field">
+                    <input type="password" class="input" placeholder="Password" name="password" required>
                 </div>
-              
-                <!-- Password input -->
-                <div class="form-outline mb-4">
-                    <label class="form-label" for="form2Example2">Password</label>
-                  <input type="password" id="form2Example2" class="form-control" />
-                 
+                <div class="input-field">
+                    <input type="submit" class="submit" value="Login">
                 </div>
-              
-                <!-- 2 column grid layout for inline styling -->
-                <div class="row mb-4">
-                  <div class="col d-flex justify-content-center">
-                    <!-- Checkbox -->
-                    <div class="form-check">
-                      <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
-                      <label class="form-check-label" for="form2Example31"> Remember me </label>
+                <div class="input-button">
+                  <button class="button" value="Siswa"><a href="{{url('/admin/logsis')}}" style="color: black">siswa</a></button>
+                  <button class="button" value="Petugas"><a href="{{url('/admin/logpet')}}" style="color: black">petugas</a></button>
+                </div>
+                <div class="buttom">
+                    <div class="left">
+                        <input type="checkbox" id="check">
+                        <label for="check">Remember me</label>
                     </div>
-                  </div>
-              
-                  <div class="col">
-                    <!-- Simple link -->
-                    <a href="#!">Forgot password?</a>
-                  </div>
                 </div>
-              
-                <!-- Submit button -->
-                <button type="button" class="btn btn-primary btn-block mb-4">Sign in</button>
-              
-                <!-- Register buttons -->
-                <div class="text-center">
-                  <p>Not a member? <a href="#!">Register</a></p>
-                </div>
-              </form>
+                </form>
+            </div>
         </div>
-      </div>
-   
+    </div>
 </body>
 </html>
