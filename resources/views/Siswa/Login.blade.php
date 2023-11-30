@@ -89,8 +89,8 @@
         }
         .button {
             border-radius: 5px;
-            font-size: 10px;
-            height: 20px;
+            font-size: 15px;
+            height: 25px;
             width: 100px;
             background: (255, 255, 255, 0, 7);
             cursor: pointer;
@@ -127,17 +127,17 @@
             </div>
 
             <div class="input-field">
-                <input type="text" class="input" placeholder="Username" name="username" required>
+                <input type="text" class="input" placeholder="NISN" name="nisn" required>
 
                 <div class="input-field">
-                    <input type="password" class="input" placeholder="Password" name="password" required>
+                    <input type="password" class="input" placeholder="NIS" name="nis" required>
                 </div>
                 <div class="input-field">
                     <input type="submit" class="submit" value="Login">
                 </div>
                 <div class="input-button">
-                    <button class="button" value="Siswa"><a href="{{url('/admin/logsis')}}" style="color: black">siswa</a></button>
-                    <button class="button" value="Petugas"><a href="{{url('/admin/logpet')}}" style="color: black">petugas</a></button>
+                    <button class="button" value="Siswa"><a href="{{url('/admin/logins')}}" style="color: black">siswa</a></button>
+                    <button class="button" value="Petugas"><a href="{{url('/admin/login')}}" style="color: black">petugas</a></button>
                   </div>
                 <div class="buttom">
                     <div class="left">

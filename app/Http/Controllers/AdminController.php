@@ -12,8 +12,11 @@ use Illuminate\Http\Request;
 class AdminController extends Controller
 {
     //login
-    public function login(){
+    public function loginP(){
         return view("Admin.LoginA");
+    }
+    public function loginS(){
+        return view("Siswa.Login");
     }
     public function ceklogin(Request $request){
         $cek = new petugas();
@@ -21,6 +24,17 @@ class AdminController extends Controller
         if ($cek->exists()) {
             session([
                 'datapetugas'=> $cek->first()
+            ]);
+            return redirect('/admin');
+            // (return response()->json(session('datapetugas')->id_petugas))
+        }
+    }  
+    public function ceklogins(Request $request){
+        $cek = new siswa();
+        $cek = $cek->where('nisn', $request->input('nisn'))->where('nis', $request->input('nis'));
+        if ($cek->exists()) {
+            session([
+                'datasiswa'=> $cek->first()
             ]);
             return redirect('/admin');
             // (return response()->json(session('datapetugas')->id_petugas))

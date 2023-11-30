@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Middleware\AdminMiddleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,8 +24,10 @@ Route::get('tabel', function () {
 });
 Route::prefix('admin')->group(function(){
     Route::get('/',[AdminController::class,'dash']);
-    Route::get('login',[AdminController::class,'login']);
+    Route::get('login',[AdminController::class,'loginP']);
     Route::post('login',[AdminController::class,'ceklogin']);
+    Route::get('logins',[AdminController::class,'loginS']);
+    Route::post('logins',[AdminController::class,'ceklogins']);
 
     // petugas
     Route::get('petugas',[AdminController::class,'datatabel']);

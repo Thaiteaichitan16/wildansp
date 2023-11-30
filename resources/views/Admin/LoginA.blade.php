@@ -123,7 +123,7 @@
             <div class="top-header">
                 <form action="" method="post">
                     @csrf
-                    <header>Login</header>
+                    <header>Login Petugas</header>
             </div>
 
             <div class="input-field">
@@ -136,8 +136,8 @@
                     <input type="submit" class="submit" value="Login">
                 </div>
                 <div class="input-button">
-                  <button class="button" value="Siswa"><a href="{{url('/admin/logsis')}}" style="color: black">siswa</a></button>
-                  <button class="button" value="Petugas"><a href="{{url('/admin/logpet')}}" style="color: black">petugas</a></button>
+                  <button class="button" value="Siswa"><a href="{{url('/admin/logins')}}" style="color: black">siswa</a></button>
+                  <button class="button" value="Petugas"><a href="{{url('/admin/login')}}" style="color: black">petugas</a></button>
                 </div>
                 <div class="buttom">
                     <div class="left">

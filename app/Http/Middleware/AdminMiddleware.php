@@ -15,6 +15,9 @@ class AdminMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if(!session('username')){
+            return redirect('/admin/login')->with('pesan','Anda harus login terlebih dahulu');
+        }
         return $next($request);
     }
 }
