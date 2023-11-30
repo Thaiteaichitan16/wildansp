@@ -16,17 +16,15 @@ class AdminController extends Controller
         return view("Admin.LoginA");
     }
     public function ceklogin(Request $request){
-        $s = new petugas();
-        $s= $s->where ('username',$request->input('username'))->where('password',$request->input('password'));
-
-        if($s->exists()){
+        $cek = new petugas();
+        $cek = $cek->where('username', $request->input('username'))->where('password', $request->input('password'));
+        if ($cek->exists()) {
             session([
-                'username'=>$request->input('username'),
-                'password'=>$request->input('password')
+                'datapetugas'=> $cek->first()
             ]);
             return redirect('/admin');
+            // (return response()->json(session('datapetugas')->id_petugas))
         }
-        return back();
     }  
     //end login
     //logout

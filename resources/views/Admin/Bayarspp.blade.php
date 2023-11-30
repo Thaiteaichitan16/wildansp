@@ -50,14 +50,27 @@
                                           @enderror
                                       </div>
                                       <div class="form-group">
-                                          <label>Bulan dibayar</label>
-                                          <input type="month" class="form-control" name="bulan_dibayar" placeholder="Bulan diBayar">
-                                          @error('bulan_dibayar')
-                                          <div class="form-text">
-                                              {{$message}}
-                                          </div>
-                                          @enderror
-                                      </div>
+                                        <label>Bulan Dibayar</label>
+                                        <select class="form-control" name="bulan_dibayar">
+                                           <option value="januari">Januari</option>
+                                           <option value="februari">Februari</option>
+                                           <option value="maret">Maret</option>
+                                           <option value="april">April</option>
+                                           <option value="mei">Mei</option>
+                                           <option value="juni">Juni</option>
+                                           <option value="juli">Juli</option>
+                                           <option value="agustus">Agustus</option>
+                                           <option value="september">September</option>
+                                           <option value="oktober">Oktober</option>
+                                           <option value="november">November</option>
+                                           <option value="desember">Desember</option>
+                                        </select>
+                                        @error('bulan_dibayar')
+                                            <div class="form-text">
+                                                {{ $message }}
+                                            </div>
+                                        @enderror
+                            </div>
                                       <div class="form-group">
                                           <label>Tahun Dibayar</label>
                                           <input type="text" class="form-control" name="tahun_dibayar" placeholder="Tahun diBayar">
